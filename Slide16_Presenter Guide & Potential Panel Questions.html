@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Presenter Guide and Panel Questions</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .slide {
+        width: 1280px;
+        min-height: 720px;
+        position: relative;
+        overflow: auto;
+        background: linear-gradient(135deg, #1a2a6c 0%, #2a4858 100%);
+        color: white;
+        padding: 30px;
+      }
+      .slide-title {
+        font-size: 32px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #fff;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .content-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+      }
+      .notes-container {
+        grid-column: span 2;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 25px;
+      }
+      .section-title {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #4caf50;
+        display: flex;
+        align-items: center;
+      }
+      .section-title i {
+        margin-right: 10px;
+      }
+      .speaker-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      .speaker-table th {
+        background-color: rgba(76, 175, 80, 0.2);
+        color: white;
+        padding: 12px;
+        text-align: left;
+        font-weight: 600;
+      }
+      .speaker-table td {
+        padding: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .speaker-name {
+        font-weight: 600;
+        color: #4caf50;
+      }
+      .speaker-slides {
+        font-weight: 500;
+        color: #2196f3;
+      }
+      .speaker-time {
+        font-weight: 500;
+        color: #ffc107;
+        text-align: center;
+      }
+      .questions-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      .question-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+      .question-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+      .question-title {
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: #ffc107;
+      }
+      .question {
+        font-size: 15px;
+        margin-bottom: 8px;
+        line-height: 1.4;
+      }
+      .suggested-answer {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.8);
+        border-left: 3px solid #4caf50;
+        padding-left: 10px;
+        margin-top: 5px;
+        line-height: 1.4;
+      }
+      .tips-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+      }
+      .tip-item {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 8px 15px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        flex: 1 1 48%;
+      }
+      .tip-item i {
+        margin-right: 8px;
+        color: #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide">
+      <h1 class="slide-title">Presenter Guide & Potential Panel Questions</h1>
+
+      <div class="notes-container">
+        <div class="section-title">
+          <i class="fas fa-users"></i> Speaking Assignments & Timeline
+        </div>
+
+        <table class="speaker-table">
+          <thead>
+            <tr>
+              <th width="20%">Speaker</th>
+              <th width="35%">Content & Slides</th>
+              <th width="35%">Key Points to Emphasize</th>
+              <th width="10%">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="speaker-name">Justine Esperida</td>
+              <td class="speaker-slides">
+                Introduction & Problem Statement<br />(Slides 1-2)
+              </td>
+              <td>
+                Metro Manila's traffic congestion issue, the reactive nature of
+                current systems, and need for predictive analytics
+              </td>
+              <td class="speaker-time">2-3 mins</td>
+            </tr>
+            <tr>
+              <td class="speaker-name">Jan Gabriel Hernandez</td>
+              <td class="speaker-slides">
+                Research Objectives & Dataset Overview<br />(Slides 3-4)
+              </td>
+              <td>
+                Research goals, MMDA dataset details, city distribution data
+                (Quezon City's 50.37% concentration)
+              </td>
+              <td class="speaker-time">2-3 mins</td>
+            </tr>
+            <tr>
+              <td class="speaker-name">Vince Jayson Lachica</td>
+              <td class="speaker-slides">
+                Methodology & Data Preprocessing<br />(Slides 5-6)
+              </td>
+              <td>
+                Research process, data cleaning steps, handling missing values,
+                preparing data for modeling
+              </td>
+              <td class="speaker-time">2-3 mins</td>
+            </tr>
+            <tr>
+              <td class="speaker-name">Miel Angelus Majaba</td>
+              <td class="speaker-slides">
+                Feature Engineering & Temporal/Spatial Analysis<br />(Slides
+                7-9)
+              </td>
+              <td>
+                Feature creation process, temporal patterns (8:30 AM & 6:30 PM
+                peaks), geographical hotspots
+              </td>
+              <td class="speaker-time">3-4 mins</td>
+            </tr>
+            <tr>
+              <td class="speaker-name">Rey Mark Rubio</td>
+              <td class="speaker-slides">
+                XGBoost Model & Model Comparison<br />(Slides 10-11)
+              </td>
+              <td>
+                XGBoost advantages, 92% accuracy results, comparison with other
+                models (Random Forest, Naive Bayes)
+              </td>
+              <td class="speaker-time">2-3 mins</td>
+            </tr>
+            <tr>
+              <td class="speaker-name">Yuan Warren Torreda</td>
+              <td class="speaker-slides">
+                Key Findings, Implications & Recommendations<br />(Slides 12-15)
+              </td>
+              <td>
+                Summary of results, practical applications, recommendations for
+                traffic authorities
+              </td>
+              <td class="speaker-time">3-4 mins</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="section-title">
+          <i class="fas fa-lightbulb"></i> Presentation Tips
+        </div>
+
+        <div class="tips-list">
+          <div class="tip-item">
+            <i class="fas fa-eye"></i> Maintain eye contact with the panel
+            throughout your presentation
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-volume-up"></i> Speak clearly and at a moderate
+            pace; avoid rushing
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-hand-point-right"></i> Use hand gestures to
+            emphasize key points
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-exchange-alt"></i> Smooth transitions between
+            speakers; acknowledge next presenter
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-clock"></i> Practice timing to ensure you stay
+            within allocated minutes
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-chart-line"></i> Emphasize the 92% accuracy and
+            practical applications
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-chalkboard-teacher"></i> Focus on visuals; avoid
+            reading directly from slides
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-question-circle"></i> Prepare for questions on
+            methodology and future work
+          </div>
+        </div>
+      </div>
+
+      <div class="content-container">
+        <div class="questions-grid">
+          <div class="section-title">
+            <i class="fas fa-question-circle"></i> Potential Technical Questions
+          </div>
+
+          <div class="question-card">
+            <div class="question-title">Data Quality & Preprocessing</div>
+            <div class="question">
+              How did you handle missing values in the MMDA dataset? What
+              challenges did you encounter with data quality?
+            </div>
+            <div class="suggested-answer">
+              We identified approximately 3.8% missing values, primarily in
+              location data and timestamps. We employed a combination of
+              techniques: removal for rows with critical missing data, mean/mode
+              imputation for numeric features, and spatial approximation for
+              location data. The key challenge was ensuring data completeness
+              without introducing bias.
+            </div>
+          </div>
+
+          <div class="question-card">
+            <div class="question-title">Model Selection</div>
+            <div class="question">
+              Why did you choose XGBoost over other approaches like deep
+              learning models or traditional statistical methods?
+            </div>
+            <div class="suggested-answer">
+              We evaluated several models and selected XGBoost due to its
+              superior performance (92% accuracy), ability to handle imbalanced
+              data, interpretability through feature importance, and
+              computational efficiency. While deep learning models like LSTM
+              were considered, XGBoost provided better results with our dataset
+              characteristics and required less computational resources.
+            </div>
+          </div>
+
+          <div class="question-card">
+            <div class="question-title">Feature Engineering</div>
+            <div class="question">
+              Could you elaborate on the feature engineering process? Which
+              features contributed most to the model's accuracy?
+            </div>
+            <div class="suggested-answer">
+              Our feature engineering included temporal features (hour, day,
+              rush hour indicators), spatial features (location clusters), and
+              categorical encodings. Time of day (35%) and location features
+              (28%) contributed most significantly to model accuracy, as
+              evidenced by our feature importance analysis. The strong
+              correlation (r=0.72) between weekday/weekend patterns also proved
+              highly valuable.
+            </div>
+          </div>
+        </div>
+
+        <div class="questions-grid">
+          <div class="section-title">
+            <i class="fas fa-clipboard-check"></i> Potential Implementation
+            Questions
+          </div>
+
+          <div class="question-card">
+            <div class="question-title">Real-World Application</div>
+            <div class="question">
+              How do you envision integrating this predictive model into
+              existing MMDA traffic management systems?
+            </div>
+            <div class="suggested-answer">
+              Integration could occur in phases: first as a decision support
+              system providing predictive analytics to traffic managers, then as
+              an automated component of the existing CCTV monitoring
+              infrastructure. We recommend an API-based service architecture
+              that can send real-time alerts to traffic authorities while
+              maintaining the current workflow with minimal disruption.
+            </div>
+          </div>
+
+          <div class="question-card">
+            <div class="question-title">Cost-Benefit Analysis</div>
+            <div class="question">
+              Have you performed a cost-benefit analysis for implementing your
+              recommendations? What would be the expected ROI?
+            </div>
+            <div class="suggested-answer">
+              While detailed financial analysis was beyond our scope, we
+              estimate significant cost savings from reduced incident response
+              times (potentially 20-35% improvement), decreased traffic
+              congestion (economic impact of ₱3.5 billion annually in Metro
+              Manila), and lower accident rates. Implementation costs would
+              primarily involve software integration and training rather than
+              massive infrastructure changes.
+            </div>
+          </div>
+
+          <div class="question-card">
+            <div class="question-title">Future Work</div>
+            <div class="question">
+              What future enhancements would you suggest to further improve the
+              model's accuracy and applicability?
+            </div>
+            <div class="suggested-answer">
+              We recommend incorporating real-time traffic flow data, weather
+              conditions, and special event information to enhance predictions.
+              Developing a multi-modal prediction system that combines XGBoost
+              with deep learning for time-series analysis could further improve
+              accuracy. Integration with smartphone apps for crowdsourced
+              incident reporting would also enrich the dataset continuously.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

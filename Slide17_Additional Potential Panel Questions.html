@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Potential Panel Questions</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .slide {
+        width: 1280px;
+        min-height: 720px;
+        position: relative;
+        overflow: auto;
+        background: linear-gradient(135deg, #1a2a6c 0%, #2a4858 100%);
+        color: white;
+        padding: 30px;
+      }
+      .slide-title {
+        font-size: 32px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #fff;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .content-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-height: 610px;
+        overflow-y: auto;
+      }
+      .question-section {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        max-height: 610px;
+        overflow-y: auto;
+      }
+      .section-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #4caf50;
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        background: linear-gradient(135deg, #1a2a6c 0%, #2a4858 100%);
+        padding: 8px 0;
+        z-index: 10;
+      }
+      .section-title i {
+        margin-right: 10px;
+      }
+      .questions-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding-right: 5px;
+      }
+      .question-card {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+        border-left: 3px solid transparent;
+      }
+      .question-card:hover {
+        transform: translateX(5px);
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      .question-text {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 8px;
+        line-height: 1.4;
+      }
+      .answer-text {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.4;
+        padding-left: 8px;
+        border-left: 2px solid rgba(76, 175, 80, 0.5);
+      }
+      .data-questions .question-card {
+        border-left-color: #ffc107;
+      }
+      .methodology-questions .question-card {
+        border-left-color: #2196f3;
+      }
+      .results-questions .question-card {
+        border-left-color: #4caf50;
+      }
+      .implementation-questions .question-card {
+        border-left-color: #9c27b0;
+      }
+      .tip-section {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 12px;
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+      }
+      .tip-icon {
+        font-size: 24px;
+        color: #ffc107;
+        margin-right: 10px;
+      }
+      .tip-text {
+        font-size: 14px;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .presenter-name {
+        font-size: 13px;
+        background-color: rgba(76, 175, 80, 0.2);
+        color: rgba(255, 255, 255, 0.9);
+        padding: 3px 8px;
+        border-radius: 4px;
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide">
+      <h1 class="slide-title">Additional Potential Panel Questions</h1>
+
+      <div class="content-container">
+        <div class="question-section data-questions">
+          <div class="section-title">
+            <i class="fas fa-database"></i> Dataset & Data Processing Questions
+          </div>
+
+          <div class="questions-list">
+            <div class="question-card">
+              <div class="question-text">
+                How representative is your 2018-2020 dataset of current traffic
+                patterns, especially considering post-pandemic changes in
+                commuting patterns?
+              </div>
+              <div class="answer-text">
+                While our dataset predates significant pandemic-related changes,
+                our model architecture can be retrained with newer data. The
+                fundamental relationships between spatial and temporal factors
+                remain relevant, and our approach can adapt to evolving traffic
+                patterns with continuous model updates.
+                <span class="presenter-name">Jan</span>
+              </div>
+            </div>
+
+            <div class="question-card">
+              <div class="question-text">
+                Given the 17,300+ incidents in your dataset, did you perform any
+                analysis on data quality or potential reporting biases?
+              </div>
+              <div class="answer-text">
+                Yes, we conducted extensive data quality analysis, including
+                distribution tests across time periods to identify potential
+                under-reporting during certain hours. We found approximately
+                3.8% missing values and implemented appropriate imputation
+                strategies. We also employed cross-validation to ensure our
+                model wasn't overfitting to any reporting biases.
+                <span class="presenter-name">Vince</span>
+              </div>
+            </div>
+
+            <div class="question-card">
+              <div class="question-text">
+                The concentration of incidents in Quezon City (50.37%) seems
+                unusually high. Could this be due to data collection biases
+                rather than actual incident rates?
+              </div>
+              <div class="answer-text">
+                We considered this possibility and cross-referenced with
+                population density and road network complexity data. Quezon
+                City's high percentage aligns with its status as the largest
+                city in Metro Manila (covering about 25% of the metropolitan
+                area), its complex road network, and high traffic volume.
+                Nevertheless, we applied normalization techniques to account for
+                potential reporting biases across regions.
+                <span class="presenter-name">Jan</span>
+              </div>
+            </div>
+
+            <div class="question-card">
+              <div class="question-text">
+                Did you consider external factors like special events, holidays,
+                or weather conditions in your analysis?
+              </div>
+              <div class="answer-text">
+                Our current model includes temporal features like day of week
+                and time of day, which capture some seasonal patterns. Weather
+                data wasn't available in our primary dataset, which is a
+                limitation we acknowledge. For future work, we recommend
+                integrating weather APIs and special event calendars to enhance
+                prediction accuracy, especially for anomalous traffic
+                conditions. <span class="presenter-name">Miel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="question-section methodology-questions">
+          <div class="section-title">
+            <i class="fas fa-microscope"></i> Methodology & Model Questions
+          </div>
+
+          <div class="questions-list">
+            <div class="question-card">
+              <div class="question-text">
+                How did you tune the hyperparameters for your XGBoost model, and
+                which parameters had the most impact on performance?
+              </div>
+              <div class="answer-text">
+                We employed grid search with cross-validation to identify
+                optimal hyperparameters. The most influential parameters were
+                learning rate (eta=0.1), maximum depth of trees (max_depth=6),
+                and number of boosting rounds (n_estimators=200). We found the
+                model was particularly sensitive to the max_depth parameter,
+                with deeper trees improving accuracy but requiring
+                regularization to prevent overfitting.
+                <span class="presenter-name">Rey</span>
+              </div>
+            </div>
+
+            <div class="question-card">
+              <div class="question-text">
+                Your model achieved 92% accuracy, but what metrics did you use
+                to evaluate imbalanced classes, and how did you address
+                potential bias toward majority classes?
+              </div>
+              <div class="answer-text">
+                Beyond accuracy, we focused on precision (74%), recall (98%),
+                and F1-score (85%) to better evaluate performance across all
+                incident types. To address class imbalance, we implemented class
+                weighting, used stratified sampling in cross-validation, and
+                optimized for F1-score rather than raw accuracy to ensure
+                balanced prediction quality across all incident categories.
+                <span class="presenter-name">Rey</span>
+              </div>
+            </div>
+
+            <div class="question-card">
+              <div class="question-text">
+                How did you validate your model's generalizability to unseen
+                data and different traffic conditions?
+              </div>
+              <div class="answer-text">
+                We employed time-based cross-validation, training on earlier
+                periods and testing on later ones to simulate real-world
+                deployment. Additionally, we performed k-fold cross-validation
+                with stratification to ensure consistent performance across
+                different traffic patterns. Our test set included diverse
+                temporal conditions (rush hours, weekends, holidays) to validate
+                generalizability across varying traffic scenarios.
+                <span class="presenter-name">Vince</span>
+              </div>
+            </div>
+
+            <div class="question-card">
+              <div class="question-text">
+                What evaluation methodology did you use to compare XGBoost with
+                Random Forest and Naive Bayes? Was the comparison fair?
+              </div>
+              <div class="answer-text">
+                We used identical training and testing datasets, feature
+                engineering processes, and evaluation metrics for all models.
+                Each model underwent hyperparameter optimization to ensure
+                optimal performance. While XGBoost requires more hyperparameter
+                tuning than Naive Bayes, we ensured a fair comparison by
+                allocating appropriate optimization efforts to each algorithm's
+                specific needs. <span class="presenter-name">Rey</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="question-section results-questions">
+          <div class="section-title">
+            <i class="fas fa-chart-bar"></i> Results & Interpretation Questions
+          </div>
+
+          <div class="questions-list">
+            <div class="question-card">
+              <div class="question-text">
+                What insights did you gain about the most significant factors
+                contributing to traffic incidents in Metro Manila?
+              </div>
+              <div class="answer-text">
+                Our feature importance analysis revealed that temporal factors
+                (time of day: 35%, day of week: 18%) and location (28%) were the
+                most significant predictors. Specifically, rush hours (8:30 AM
+                and 6:30 PM) showed 35% higher incident rates than other
+                periods. The strong correlation (r=0.72) between day of week and
+                incident patterns highlights how weekend traffic differs
+                significantly from weekday patterns.
+                <span class="presenter-name">Miel</span>
+              </div>
+            </div>
+
+            <div class="question-card">
+              <div class="question-text">
+                How do you interpret the correlation (r=0.72) between day of
+                week and weekends in your findings?
+              </div>
+              <div class="answer-text">
+                This strong positive correlation indicates that traffic incident
+                patterns change significantly between weekdays and weekends.
+                Weekdays show concentrated peaks during traditional rush hours,
+                while weekends exhibit more evenly distributed incident patterns
+                throughout the day. This suggests different driving behaviors
+                and traffic management approaches are needed for weekends versus
+                weekdays. <span class="presenter-name">Yuan</span>
+              </div>
+            </div>
+
+            <div class="question-card">
+              <div class="question-text">
+                What specific insights did your spatial analysis provide about
+                high-risk locations in Metro Manila?
+              </div>
+              <div class="answer-text">
+                Our spatial clustering revealed that EDSA, Quezon Avenue, and
+                Commonwealth Avenue are the most incident-prone corridors.
+                Specifically, we identified that intersections along these
+                routes account for a disproportionate number of incidents.
+                EDSA-Quezon Avenue intersection, for example, showed 180% higher
+                incident rates than the average intersection. This suggests
+                targeted infrastructure improvements at these specific locations
+                could have outsized benefits.
+                <span class="presenter-name">Miel</span>
+              </div>
+            </div>
+
+            <div class="question-card">
+              <div class="question-text">
+                How did you rule out the possibility that your model is simply
+                identifying general traffic volume rather than actual incident
+                risk?
+              </div>
+              <div class="answer-text">
+                We incorporated traffic volume data as a control feature in our
+                model, which allowed us to distinguish between high-traffic
+                areas and high-risk areas. Some high-volume locations showed
+                relatively low incident rates, while others showed
+                disproportionately high rates. This normalization helps identify
+                truly high-risk locations rather than just busy areas.
+                <span class="presenter-name">Yuan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="question-section implementation-questions">
+          <div class="section-title">
+            <i class="fas fa-cogs"></i> Implementation & Future Work Questions
+          </div>
+
+          <div class="questions-list">
+            <div class="question-card">
+              <div class="question-text">
+                How would your model handle sudden changes in traffic patterns
+                due to unplanned events like political demonstrations or major
+                sporting events?
+              </div>
+              <div class="answer-text">
+                Our current model would likely underperform during unexpected
+                events. For real-world implementation, we recommend developing
+                an anomaly detection system that identifies unusual patterns and
+                triggers alternative prediction models. Integration with social
+                media and event APIs would allow the system to anticipate
+                non-routine traffic conditions and adjust predictions
+                accordingly. <span class="presenter-name">Yuan</span>
+              </div>
+            </div>
+
+            <div class="question-card">
+              <div class="question-text">
+                What specific technical infrastructure would be required to
+                deploy your model in a production environment at the MMDA?
+              </div>
+              <div class="answer-text">
+                Implementation would require: (1) A dedicated server with GPU
+                support for real-time processing, (2) API integration with
+                existing MMDA traffic monitoring systems, (3) A data pipeline
+                for continuous model updating and training, (4) A user-friendly
+                dashboard for traffic controllers, and (5) Mobile-optimized
+                alerts for field personnel. Cloud deployment would provide the
+                necessary scalability and reliability.
+                <span class="presenter-name">Rey</span>
+              </div>
+            </div>
+
+            <div class="question-card">
+              <div class="question-text">
+                How would you address privacy concerns regarding location
+                tracking if your system were to be implemented citywide?
+              </div>
+              <div class="answer-text">
+                Our approach uses aggregated data rather than individual vehicle
+                tracking. We recommend implementing data anonymization
+                protocols, adhering to data privacy regulations, obtaining
+                appropriate permits, and being transparent about data usage. We
+                can achieve accurate predictions using anonymized, aggregated
+                data without compromising individual privacy.
+                <span class="presenter-name">Justine</span>
+              </div>
+            </div>
+
+            <div class="question-card">
+              <div class="question-text">
+                What are the limitations of your current model and what specific
+                improvements would you recommend for future work?
+              </div>
+              <div class="answer-text">
+                Current limitations include: (1) Fixed temporal patterns that
+                don't adapt to evolving traffic behaviors, (2) Limited weather
+                and special event data integration, and (3) Lack of real-time
+                updating capability. Future improvements should include:
+                developing an adaptive online learning approach, integrating
+                multiple data sources (weather, events, road work), implementing
+                a reinforcement learning component to continuously improve
+                predictions, and creating a city-specific ensemble of models.
+                <span class="presenter-name">Yuan</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tip-section">
+            <div class="tip-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="tip-text">
+              <strong>Handling Difficult Questions:</strong> If faced with a
+              challenging question, acknowledge the limitation, explain your
+              approach given the constraints, and highlight how future work
+              could address this gap. Remember, identifying limitations shows
+              critical thinking and research maturity.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
